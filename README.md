@@ -220,6 +220,79 @@ Replace `odoo_test` with the name of the Odoo database.
 
 ---
 
+## Payment Provider Setup
+
+After installing the **Monime Gateway** module, configure Monime as a payment provider in Odoo.
+
+### 1. Restart Odoo
+
+After installing the addon, restart the Odoo server to ensure that the module is loaded correctly.
+
+### 2. Activate the Monime Gateway Module
+
+1. Open **Odoo**.
+2. Navigate to **Apps**.
+3. Search for **Monime**.
+4. Select the **Monime Gateway** module.
+5. Click **Activate** to enable the module.
+
+### 3. Find the Monime Payment Provider
+
+After activating the module:
+
+1. Open **Settings**.
+2. Search for **Payment Provider**.
+3. Select **Find a Payment Provider**.
+4. Locate **Monime** in the list of available payment providers.
+5. Select **Monime** to open its configuration.
+
+### 4. Configure Monime
+
+Enable the Monime payment provider and enter the credentials required to connect Odoo to your Monime account.
+
+The configuration includes:
+
+* **Space ID** — The Monime Space ID used for the payments.
+* **Monime Token** — The authentication token used by Odoo to create Monime Checkout sessions.
+* **Webhook Secret** — The secret used to validate payment webhooks received from Monime. This field is **optional**, but configuring it is recommended when webhook synchronization is enabled.
+
+After entering the required information, save the payment provider configuration.
+
+### 5. Enable Monime for eCommerce
+
+Once the provider has been configured and activated, Monime becomes available as a payment method in Odoo's standard eCommerce checkout.
+
+Customers can then select **Monime** during checkout and are redirected to **Monime Checkout** to complete their payment.
+
+### Configuration Summary
+
+```text
+Odoo
+ └── Apps
+      └── Monime Gateway
+           └── Activate
+                │
+                ▼
+           Settings
+                │
+                ▼
+        Payment Provider
+                │
+                ▼
+     Find a Payment Provider
+                │
+                ▼
+             Monime
+                │
+                ├── Activate
+                ├── Space ID
+                ├── Monime Token
+                └── Webhook Secret (Optional)
+```
+
+> **Webhook Secret:** Although the webhook secret is optional, configuring it is recommended because it allows Odoo to securely validate payment status notifications received directly from Monime.
+
+---
 # Configuration
 
 After installation, **Monime** is available as an Odoo payment provider.
