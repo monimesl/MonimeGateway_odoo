@@ -583,9 +583,6 @@ See the repository license for licensing information.
 
 # Links
 
-**Repository:**
-https://github.com/Alhakan501/MonimeGateway
-
 **Monime:**
 https://monime.io
 
