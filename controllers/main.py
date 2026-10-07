@@ -19,7 +19,9 @@ class MonimeController(http.Controller):
         "/payment/monime/cancel",
         type="http",
         auth="public",
+        methods=["GET", "POST"],
         csrf=False,
+        save_session=False,
     )
     def monime_cancel(self, **data):
 
@@ -84,7 +86,9 @@ class MonimeController(http.Controller):
         "/payment/monime/success",
         type="http",
         auth="public",
+        methods=["GET", "POST"],
         csrf=False,
+        save_session=False,
     )
     def monime_success(self, **data):
 
